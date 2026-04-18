@@ -31,7 +31,7 @@ class NotificationService {
   }
 
   listByTicket(ticketId) {
-    return this.repo.findAll().filter(n => n.ticketId === ticketId);
+    return this.repo.findByTicketId(ticketId);
   }
 }
 
