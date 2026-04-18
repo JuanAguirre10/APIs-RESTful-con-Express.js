@@ -6,7 +6,8 @@ class NotificationRepository extends BaseRepository {
   }
 
   findByTicketId(ticketId) {
-    return this.findAll().filter(n => n.ticketId === ticketId);
+    const db = this._readDB();
+    return db[this.entityName].filter(n => n.ticketId === ticketId);
   }
 }
 
